@@ -138,7 +138,7 @@ jsou:
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | provided       | Potřebná pro kompilaci, ale nebude součástí výsledného JAR/WAR/... Závilost bude během spuštění dostupná na classpath (poskytne aplikační kontejner ap.) |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | system         | Potřebná pro kompilaci, ale cestu musíme zadat z místa na disku. V praxivhodná jen při :ref:`mavenizaci <mavenizace>`.                                  |
+   | system         | Potřebná pro kompilaci, ale cestu musíme zadat z místa na disku. V praxivhodná jen při :ref:`mavenizaci <mavenizace>`.                                   |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | import         | Speciální obor platnosti pro :ref:`multi-module projekty <multi-module>` (typ balení pom).                                                               |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -284,7 +284,7 @@ Z příkazové řádky můžeme vyvolat provádění phase nebo goalu. Více pha
 mezi sebou.
 
 Syntaxe pro spuštění phase je jen její název (např. ``package``), syntaxe pro goal je
-*<plugin>*:*<goal>*. Např.:
+*<plugin>*:*<goal>*. Např.::
 
   $ mvn clean jar:test-jar
 
@@ -327,7 +327,7 @@ Minimálním povinným základem každého POM je určení coordinates, tedy ele
 K tomu je třeba určit verzi POM modelu 4.0.0 platí pro Maven 2 a 3. Minimální platný POM by vypadal
 např. takto
 
-.. code-block: xml
+.. code-block:: xml
    
    <project>
        <modelVersion>4.0.0</modelVersion>
@@ -338,7 +338,7 @@ např. takto
 
 Zkrácená ukázka pom.xml (většina elementů je nepovinných):
 
-.. code-block: xml
+.. code-block:: xml
    
    <project xmlns="http://maven.apache.org/POM/4.0.0"
      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -448,8 +448,7 @@ Použití:
    +------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    | ``${project.build.sourceEncoding}``| Kódování zdrojových souborů (dnes obvykle UTF-8). Maven :ref:`varuje <varovani-kodovani-souboru>`, pokud není definováno. |
    +------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | ``${env._<proměnná>_}``            | Vyhodnotí proměnnou prostředí OS, např. ``${env.HOME}``
-vrátí domovskou složku uživatele.                                 |
+   | ``${env._<proměnná>_}``            | Vyhodnotí proměnnou prostředí OS, např. ``${env.HOME}`` vrátí domovskou složku uživatele.                                 |
    +------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Např. velmi často potřebnou proměnnou pro správné fungování kompilátoru je
@@ -499,7 +498,7 @@ Přidání repozitáře do POM
 
 Příklad přidání nového vzdáleného repozitáře do POM projektu:
 
-.. code-block: xml
+.. code-block:: xml
 
    <repositories>
      	<repository>

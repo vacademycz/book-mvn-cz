@@ -24,7 +24,7 @@ další plugin `maven-surefire-report-plugin
 Pokud chceme tento výstup vytvořit v rámci :ref:`lifecycle site <lifecycle-phase-plugin-goal>`
 (neboli ``mvn site``), přidejte do ``pom.xml``:
 
-.. code-block: xml
+.. code-block:: xml
 
    <reporting>
        <plugins>
@@ -56,7 +56,7 @@ přidávat nebo odebírat. Je povoleno používat zástupné znaky
 
 Např. vyloučit všechny testy začínající na ``Dummy``:
 
-.. code-block: xml
+.. code-block:: xml
 
    <build>
        <plugins>

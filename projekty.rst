@@ -159,7 +159,7 @@ Maven pro nás vytvoří tuto strukturu::
 
 Nyní do POM přidáme repozitář uvnitř projektu:
 
-.. code-block: xml
+.. code-block:: xml
 
    <repositories>
        <repository>
@@ -170,7 +170,7 @@ Nyní do POM přidáme repozitář uvnitř projektu:
 
 A samozřejmě nakonec samotnou závilost:
 
-.. code-block: xml
+.. code-block:: xml
 
    <dependency>
        <groupId>org.virtage</groupId>
@@ -256,7 +256,7 @@ Multi-module projekt je sám Maven projekt a tudíž má pom.xml, kterému můž
 Ten v sekci ``<modules>`` odkazuje na jednotlivé moduly. Jméno modulu musí odpovídat složce ve které
 je modul umístěn.
 
-.. code-block: xml
+.. code-block:: xml
    :caption: Top-level POM
 
    <project>
@@ -305,7 +305,7 @@ Maven vytvoří složky shodné s artifactId modulů::
 
 Nastavíme referenci na rodičovský POM pomocí elementu ``<parent>``:
 
-.. code-block: xml
+.. code-block:: xml
    :caption: POM modulu
 
    <project>
@@ -330,7 +330,7 @@ Packaging (typ balení)
 Packaging (a odpovídající element ``<packaging>`` v POM) určují typ balení neboli jaký bude výsledek
 sestavení Maven projektu pomocí ``mvn package``. Pokud není specifikován přepokládá se ``jar``.
 
-.. code-block: xml
+.. code-block:: xml
 
    <project>
        ...
@@ -382,4 +382,3 @@ programátor nemusí studovat, kam se ukládají jaké soubory zrovna ve vaší 
 .. note:: Váš projekt nemusí mít všechny uvedené složky nebo jich mít naopak více. Např.
    ``src/main/webapp`` najdeme jen v javovské webové aplikaci. ``target/site/`` jen, když site
    nastavíme, aby se generoval.
-   

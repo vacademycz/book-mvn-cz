@@ -6,7 +6,7 @@ Nastavení verze Java kompilátoru
 
 Přidáme do sekce ``<plugins>`` POM souboru:
 
-.. code-block: xml
+.. code-block:: xml
 
    ...
    <build>
@@ -31,11 +31,13 @@ Nastavení výchozího goal nebo phase
 Voláme stále Maven se stejným cílem nebo fází? Např.
 
 ::
+
     $ mvn clean package
 
 Díky nastavení defaultního cíle nebo fáze (od Maven 2) můžeme psát jen
 
 ::
+
     $ mvn
 
 pro totéž. V ``pom.xml`` v ``<defaultGoal>`` elementu musíme nastavit nejčastější goal nebo fázi::

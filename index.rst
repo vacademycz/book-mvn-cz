@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Vítejte Maven - příručka programátora!
-======================================
+Vítá vás Maven - příručka programátora!
+=======================================
 
 Vítáme budoucí i současné uživatele a programátory v této příručce Maven. Tato publikace může být
 skvělým doplňkem k našemu `školení Maven <https://vacademy.cz/kurz/mvn/>`_, ale je koncipována jako
@@ -28,8 +28,9 @@ může tyto podmínky v budoucnu upravovat. Při sdílení a šíření je nutn�
 odkazem.
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 3
    :caption: Obsah:
+   :numbered:
 
    uvod
    zaklady
