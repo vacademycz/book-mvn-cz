@@ -4,7 +4,7 @@ Tipy a triky
 Nastavení verze Java kompilátoru
 ********************************
 
-Přidejte do sekce ``<plugins>`` POM souboru:
+Přidáme do sekce ``<plugins>`` POM souboru:
 
 .. code-block: xml
 
@@ -28,17 +28,17 @@ Přidejte do sekce ``<plugins>`` POM souboru:
 Nastavení výchozího goal nebo phase
 ***********************************
 
-Voláte stále Maven se stejným cílem nebo fází? Např.
+Voláme stále Maven se stejným cílem nebo fází? Např.
 
 ::
     $ mvn clean package
 
-Díky nastavení defaultního cíle nebo fáze (od Maven 2) můžete psát jen
+Díky nastavení defaultního cíle nebo fáze (od Maven 2) můžeme psát jen
 
 ::
     $ mvn
 
-pro totéž. V ``pom.xml`` v ``<defaultGoal>`` elementu musíte nastavit nejčastější goal nebo fázi::
+pro totéž. V ``pom.xml`` v ``<defaultGoal>`` elementu musíme nastavit nejčastější goal nebo fázi::
 
     <build>
         ...
@@ -56,7 +56,7 @@ podobnou této::
     [WARNING] Using platform encoding (UTF-8 actually) to copy filtered resources,
     i.e. build is platform dependent!
 
-Znamená to, že použije kódování aktuálního počítače, ale to nemusí být to ve kterém byly soubory
+Znamená to, že použije kódování aktuálního počítače, ale to nemusí být to, ve kterém byly soubory
 vytvořeny a tak může na jiném PC build selhat.
 
 Je třeba nastavit kódování zdrojových souborů :ref:`vlastnost <properties>`
@@ -69,7 +69,7 @@ Je třeba nastavit kódování zdrojových souborů :ref:`vlastnost <properties>
 Spuštění Java programu z Maven
 ******************************
 
-Sám Maven neumí spustit Java program (resp. třídu se ``main()`` metodou). Pokud to potřebujete
+Sám Maven neumí spustit Java program (resp. třídu se ``main()`` metodou). Pokud to potřebujeme
 poslouží `exec-maven-plugin <http://www.mojohaus.org/exec-maven-plugin/>`_::
 
     mvn exec:java -Dexec.mainClass=org.virtage.maven.App
@@ -85,7 +85,7 @@ informací pro práci.
 Zjištění goals určitého pluginu
 ===============================
 
-Jaké goaly plugin nabízí k použití zjistíte příkazem
+Jaké goaly plugin nabízí k použití zjistíme příkazem
 
 ::
 
@@ -161,13 +161,13 @@ Debugging (ladění) Maven
 
 Maven nabízí řadu možností, co dělat při problémech.
 
-.. note:: Zabudovanou nápovědu k pluginům, analýzu závilostí ap. najdete na stránce
+.. note:: Zabudovanou nápovědu k pluginům, analýzu závilostí ap. najdeme na stránce
    :ref:`ziskani-napovedy`.
 
-Full stack trace vyjímek (exceptions)
+Full stack trace výjimek (exceptions)
 =====================================
 
-Pokud Maven plugin nebo Maven samotný skončí vyjímkou, můžete vynutit full stack trace volbou
+Pokud Maven plugin nebo Maven samotný skončí výjimkou, můžeme vynutit full stack trace volbou
 ``-e``, např.::
 
     mvn clean package -e
@@ -175,7 +175,7 @@ Pokud Maven plugin nebo Maven samotný skončí vyjímkou, můžete vynutit full
 Vypisovat debug info
 ====================
 
-Volbou -X nebo -debug přinutíte Maven vypisovat všechny detaily toho co provádí. Pozor výpis bude
+Volbou -X nebo -debug přinutíme Maven vypisovat všechny detaily toho, co provádí. Pozor, výpis bude
 velmi dlouhý!
 
 ::
@@ -186,7 +186,7 @@ Debug Maven nebo pluginů
 ========================
 
 Velmi pokročilý způsob ladění Maven představuje možnost krokovat provádění pomocí JPDA debuggeru
-(např. z vašeho IDE jako IntelliJ IDEA). Místo příkazu ``mvn`` použijte ``mvnDebug``. Ve výchozí
+(např. z vašeho IDE jako IntelliJ IDEA). Místo příkazu ``mvn`` použijeme ``mvnDebug``. Ve výchozí
 konfiguraci bude Maven čekat na připojení debuggeru na portu 8000::
 
     $ /usr/share/maven/bin/mvnDebug
