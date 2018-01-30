@@ -9,7 +9,7 @@ vytvoří složky pro testy (``src/test/java/``) a testy spouští ještě před
 projektu (``mvn package``). Navíc standardně, pokud testy selžou nebo skončí chybou, projekt se
 nesestaví.
 
-Jak už je u Maven obvyklé testy provádí ve skutečnosti plugin `maven-surefire-plugin
+Jak už je u Maven obvyklé, testy provádí ve skutečnosti plugin `maven-surefire-plugin
 <http://maven.apache.org/surefire/maven-surefire-plugin/index.html>`_. Ten podporuje JUnit i TestNG
 framework. Výsledkem testu je report v textové a XML podobě v ``target/surefire-reports/`` určený k
 dalšímu zpracování.
@@ -48,10 +48,10 @@ Přidání/vyloučení testů
 =======================
 
 Během :ref:`test phase <test-phase>` se Surefire pokusí provést testy v ``src/test/java/``. Pomocí
-elementů ``<includes>`` a ``<excludes>`` v ``<build>`` POM souboru můžete jednotlivé testy dodatečně
-přidávat nebo odebírat. Jsou povolené používat zástupné znaky
+elementů ``<includes>`` a ``<excludes>`` v ``<build>`` POM souboru můžeme jednotlivé testy dodatečně
+přidávat nebo odebírat. Je povoleno používat zástupné znaky
 
-* ``**`` – kdekoli ve hiearchii složek
+* ``**`` – kdekoli v hiearchii složek
 * ``*`` – libovolných nebo více znaků
 
 Např. vyloučit všechny testy začínající na ``Dummy``:
@@ -76,11 +76,11 @@ Např. vyloučit všechny testy začínající na ``Dummy``:
    </build>
 
 .. important:: Pozor na to, že Maven surefire plugin defaultně spouští jen testy (třídy testů),
-   které se začínají na ``Test``, končí na ``Test`` nebo ``TestCase``! Nemusíte nic dělat, pokud
-   dodržujete konvenci a třídy pojmenováváte ``NěcoTest``.
+   které se začínají na ``Test``, končí na ``Test`` nebo ``TestCase``! Nemusíme nic dělat, pokud
+   dodržujeme konvenci a třídy pojmenováváme ``NěcoTest``.
 
-   Pokud chcete testovat všechny Java soubory v ``src/test/java/`` bez ohledu na jejich název
-   můžete změnit nastavení surefire pluginu:
+   Pokud chceme testovat všechny Java soubory v ``src/test/java/`` bez ohledu na jejich název
+   můžeme změnit nastavení surefire pluginu:
 
    .. code-block:: xml
 
@@ -98,7 +98,7 @@ Použijte volbu ``-Dmaven.test.skip=true``, např.:
 
     mvn clean package -Dmaven.test.skip=true
 
-Spouštění jen jednoho testu
+Spuštění jen jednoho testu
 ===========================
 
 Pro spuštění jen jediného testu použijte::
@@ -115,21 +115,21 @@ navíc již dodáván přímo s Jenkins.
 
 Postup není složitý:
 
-1. Stáhněte a spusťte Jenkins z WAR souboru::
+1. Stáhneme a spustíme Jenkins z WAR souboru::
    
    $ java -jar jenkins.war
 
-   nebo nainstalujte balíček pro svůj OS.
+   nebo nainstalujeme balíček pro svůj OS.
 2. Běžne na http://localhost:8080/.
-3. V :menuselection:`Manage Jenkins --> Configure System --> Maven Installations` nastavte cestu k
-   existující instalaci Maven nebo využijte schopnost Jenkins si stáhnout Maven automaticky.
+3. V :menuselection:`Manage Jenkins --> Configure System --> Maven Installations` nastavíme cestu k
+   existující instalaci Maven nebo využijeme schopnost Jenkins - stáhnout si Maven automaticky.
 
    .. figure:: img/jenkins-nastaveni-cestky-k-maven.png
       
       Nastavení cesty k instalaci Maven v Jenkins CI
 
-4. Založte nový projekt typu Maven 2/3 běžným způsobem.
-5. Funkčnost si zkontrolujte v konzolovém výstupu jobu.
+4. Založíme nový projekt typu Maven 2/3 běžným způsobem.
+5. Funkčnost si zkontrolujeme v konzolovém výstupu jobu.
    
    .. figure:: img/jenkins-job-console-output.png
 

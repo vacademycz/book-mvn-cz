@@ -6,13 +6,13 @@ Základy Maven
 Závilost, plugin, artifact
 **************************
 
-Jednou z hlavním příčin úspěchu Maven je správa závilostí. Váš program si určuje jaký další software
+Jednou z hlavních příčin úspěchu Maven je správa závilostí. Váš program si určuje jaký další software
 
 * potřebuje jako závilosti (*dependency, závilost*)
 * potřebuje pro sestavení (*plugin* nebo někdy také *MOJO*).
 
 Váš sestavený program se může stát závilostí pro další program atp. Stejně tak program, který píšete
-může být plugin pro Maven. Proto se obecně setkáte s pojmem *artifact (artefakt)* zahrnující jak
+může být plugin pro Maven. Proto se obecně setkáváme s pojmem *artifact (artefakt)* zahrnující jak
 závilosti, tak pluginy.
 
 Pluginy bychom mohli ještě rozdělit na pluginy potřebné k sestavení projektu a pro generování
@@ -21,7 +21,7 @@ reportů (viz `manuál Maven <http://maven.apache.org/plugins/index.html>`_).
 Coordinates
 ***********
 
-Pro jednoznačnou identifikace artifactů v Maven repozitáři slouží tzv. coordinates (souřadnice)
+Pro jednoznačnou identifikaci artifactů v Maven repozitáři slouží tzv. coordinates (souřadnice)
 
 1. ve zkráceném tvaru *groupId*:*artifactId*:*version* nebo
 2. v úplném *groupId*:*artifactId*:*packaging*:*classifier*:*version*.
@@ -46,10 +46,10 @@ Pro jednoznačnou identifikace artifactů v Maven repozitáři slouží tzv. coo
    | org.apache.maven.doxia | doxia             | pom       | experimental | 1.0-alpha-9     |
    +------------------------+-------------------+-----------+--------------+-----------------+
 
-Všimněte si, že můžou chybět vlastnosti
+Všimněte si, že mohou chybět vlastnosti
 
 1. *packaging* neboli typ balení, pak se přepokládá hodnota jar
-2. *classfier* pro upřesnění jinak kolidující artifactů (bez defaultní hodnoty)
+2. *classfier* pro upřesnění jinak kolidujících artifactů (bez defaultní hodnoty)
 
 Více v `manuálu Maven <http://maven.apache.org/pom.html#Maven_Coordinates>`_.
 
@@ -59,8 +59,8 @@ Závilosti
 Přidání závilosti
 =================
 
-Závilost na běžném artifactu i na pluginu do Maven projektu přidáváte v souboru ``pom.xml`` jako
-element ``<dependency>``. V ``pom.xml`` souboru vypadá definice závilosti a pluginu takto:
+Závilost na běžném artifactu i na pluginu do Maven projektu přidáváme v souboru ``pom.xml`` jako
+element ``<dependency>``. V ``pom.xml`` souboru vypadá definice závilosti na pluginu takto:
 
 .. code-block:: xml
    :caption: Příklad definice závilosti
@@ -117,14 +117,14 @@ Transitive závilost
 
 (Užitečný český překlad nás nenapadá.) Závilosti obvykle mají další závilosti, ty zase další atd.
 atd. Stejně tak i pluginy. Skvělou vlastností Maven je, že se postará o tyto "skryté" tzv.
-transitive závilosti, tedy závilosti vašich závilostí. Transitive závilosti musí být pochopitelně k
+transitive závilosti, tedy závilosti našich závilostí. Transitive závilosti musí být pochopitelně k
 nalazení ve známých :ref:`repozitářích <repozitare>`.
 
 Scopes (obor platnosti)
 =======================
 
 Možná jste si povšimli elementu ``<scope>`` ve výše uvedených příkladech závislostí. Každá závilost
-platí pouze v určitném scope (oboru platnosti). Základních zabudovaných pět typů oboru platnosti
+platí pouze v určitném scope (oboru platnosti). Základními zabudovanými pěti typy oborů platnosti
 jsou:
 
 .. table:: Zabudované scope (obory platnosti) závilostí
@@ -136,9 +136,9 @@ jsou:
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | test           | Závilost potřebná jen pro spuštění testů.                                                                                                                |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | provided       | Potřebná pro kompilaci, ale nebude součástí výsledného JAR/WAR/... Závilost bude během dostupná spuštění na classpath (poskytne aplikační kontejner ap.) |
+   | provided       | Potřebná pro kompilaci, ale nebude součástí výsledného JAR/WAR/... Závilost bude během spuštění dostupná na classpath (poskytne aplikační kontejner ap.) |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
-   | system         | Potřebná pro kompilaci, ale cestu musíme zadat z místa na disku. V praxi vhodná jen při :ref:`mavenizaci <mavenizace>`.                                  |
+   | system         | Potřebná pro kompilaci, ale cestu musíme zadat z místa na disku. V praxivhodná jen při :ref:`mavenizaci <mavenizace>`.                                  |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
    | import         | Speciální obor platnosti pro :ref:`multi-module projekty <multi-module>` (typ balení pom).                                                               |
    +----------------+----------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -146,8 +146,8 @@ jsou:
 Pořadí závislostí
 =================
 
-Pozor na to, že na pořadí závilostí záleží! Tak, jak je napíše v ``pom.xml``, v takovém pořadí budou
-v classpath. To může být důležité např. pro knihovny upravující třídy (weaving) jako třeba při
+Pozor na to, že na pořadí závilostí záleží! Tak, jak je napíšeme v ``pom.xml``, v takovém pořadí
+budou v classpath. To může být důležité např. pro knihovny upravující třídy (weaving) jako třeba při
 `testování <https://vacademy.cz/kurz/jt/>`_ s knihovnou `JMockit <http://jmockit.org>`_.
 
 .. _lifecycle-phase-plugin-goal:
@@ -280,7 +280,7 @@ Site lifecycle
 Provádění phase nebo goal
 =========================
 
-Z příkazové řádky můžete vyvolat provádění phase nebo goalu. Více phases/goalů oddělujeme mezerou
+Z příkazové řádky můžeme vyvolat provádění phase nebo goalu. Více phases/goalů oddělujeme mezerou
 mezi sebou.
 
 Syntaxe pro spuštění phase je jen její název (např. ``package``), syntaxe pro goal je
@@ -290,10 +290,10 @@ Syntaxe pro spuštění phase je jen její název (např. ``package``), syntaxe 
 
 provede postupně
 
-1. všechny goals fáze clean patřícím do cyklu clean
+1. všechny goals fáze clean patřící do cyklu clean
 2. pouze goal test-jar z pluginu jar patřící do cyklu default
 
-.. important:: Přímým vyvoláním goalu přeskočíte všechny fáze cyklu a provede se opravdu jen zadaný
+.. important:: Přímým vyvoláním goalu přeskočíme všechny fáze cyklu a provede se opravdu jen zadaný
    goal. Naopak vyvoláním celé fáze provede i všechny předchozí goals.
    
 Následující příklad postupně provede všechny fáze (validate, initialize, generate-sources,
@@ -304,9 +304,9 @@ process-sources, generate-resources, process-resources) až po samotné compile:
 Soubor pom.xml
 **************
 
-Podle přítomnosti souboru ``pom.xml`` (nebo jen POM) poznáte, že projekt je Maven projekt. *POM
+Podle přítomnosti souboru ``pom.xml`` (nebo jen POM) poznáme, že projekt je Maven projekt. *POM
 neboli Project Object Model* je reprezentací Maven projektu XML syntaxí. Slovo "projekt" zde má
-velmi široký pojem a neznamená pouze zdrojový kód. V POMu evidujete také řadu dalších informací o
+velmi široký pojem a neznamená pouze zdrojový kód. V POMu evidujeme také řadu dalších informací o
 projektu jako např.
 
 * konfigurační soubory
@@ -324,7 +324,7 @@ Minimálním povinným základem každého POM je určení coordinates, tedy ele
 * ``<artifactId>`` – ID tohoto artifactu neboli jméno projektu (např. ``diskcleaner``)
 * ``<version>`` – verze artifaktu (projektu) (např. ``1.5.2a``)
 
-K tomu je třeba určit verzi POM modelu 4.0.0 plací pro Maven 2 a 3. Minimální platný POM by vypadal
+K tomu je třeba určit verzi POM modelu 4.0.0 platí pro Maven 2 a 3. Minimální platný POM by vypadal
 např. takto
 
 .. code-block: xml
@@ -388,7 +388,7 @@ Zkrácená ukázka pom.xml (většina elementů je nepovinných):
 Dědičnost POM
 =============
 
-Pokud některé nastavení v POM projektu vynecháte Maven slučováním postupně hledá v
+Pokud některé nastavení v POM projektu vynecháme, Maven slučováním postupně hledá v
 
 * rodičovském POM (pro multi-module Maven projekty)
 * "Super POM", když rodičovský chybí nebo po té co nenajde všechno nastavení v rodičovském
@@ -397,7 +397,7 @@ Super POM mj. určuje URL :ref:`The Central Repository <central-repository>`, :r
 adresářovou strukturu <standardni-adresarova-struktura>` Maven projektu atd. Jeho obsah je
 "zadrátován" ve zdrojovém kódu Mavenu a může se pro každou verzi mírně lišit.
 
-.. tip:: Super POM vašeho Maven si můžete prohlédnout příkazem ``mvn help:effective-pom``.
+.. tip:: Super POM vašeho Maven si můžeme prohlédnout příkazem ``mvn help:effective-pom``.
 
 Viz `manuál Maven <http://maven.apache.org/pom.html#The_Super_POM>`_.
 
@@ -407,7 +407,7 @@ Properties (vlastnosti)
 =======================
 
 Properties jsou velmi podobné stejné funkci v Antu nebo v operačním systému. Jsou to dvojice
-klíč-hodnota, obojí typu řetězec, které nadefinujete na jednou místě a opakovaně použijete v POM
+klíč-hodnota, obojí typu řetězec, které nadefinujeme na jednou místě a opakovaně použijeme v POM
 souboru. Hodí se pro uložení takových hodnot jako cesty, URL, uživatelská jméno ap.
 
 Všechny vlastnosti se používají zápisem ``${_property_}`` a vytvářejí se v elementu
@@ -448,7 +448,8 @@ Použití:
    +------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
    | ``${project.build.sourceEncoding}``| Kódování zdrojových souborů (dnes obvykle UTF-8). Maven :ref:`varuje <varovani-kodovani-souboru>`, pokud není definováno. |
    +------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
-   | ``${env._<proměnná>_}``            | Vyhodnotí proměnnou prostředí OS, např. ``${env.HOME}`` vrátí domovskou složku uživatele.                                 |
+   | ``${env._<proměnná>_}``            | Vyhodnotí proměnnou prostředí OS, např. ``${env.HOME}``
+vrátí domovskou složku uživatele.                                 |
    +------------------------------------+---------------------------------------------------------------------------------------------------------------------------+
 
 Např. velmi často potřebnou proměnnou pro správné fungování kompilátoru je
@@ -468,30 +469,30 @@ Lokální repozitář
 =================
 
 Vždy přítomný lokální repozitář je v ``~/.m2/repository/``, který funguje v zásadě jako cache a
-najdete zde dříve použité stažené arefakty ze vzdálených repozitářů.
+najdete zde dříve použité stažené artefakty ze vzdálených repozitářů.
 
 .. _central-repository:
 
 The Central Repository
 ======================
 
-Druhý repozitář, který nemusíte nastavovat (definuje ho :ref:`Super POM <dedicnost-pom>`) a přesto v
+Druhý repozitář, který nemusíme nastavovat (definuje ho :ref:`Super POM <dedicnost-pom>`) a přesto v
 něm Maven bude hledat se nazývá The Central Repository
 
 * URL pro člověka (webový prohlížeč): http://search.maven.org/
 * URL pro Maven: http://repo.maven.apache.org/maven2
 
-V něm jsou prakticky všechny myslitelné knihovny a závilosti, které můžete potřebovat.
+V něm jsou prakticky všechny myslitelné knihovny a závilosti, které můžeme potřebovat.
 
-Občas přesto narazíte, že nějaký software v The Central Repository chybí (buď třetí strany,
-proprierání nebo váš vlastní software) a je třeba ho tzv. :ref:`mavenizovat <mavenizace>`.
+Občas přesto narazíme na to, že nějaký software v The Central Repository chybí (buď třetí strany,
+proprietární nebo náš vlastní software) a je třeba ho tzv. :ref:`mavenizovat <mavenizace>`.
 
 Vlastní repozitář
 =================
 
 Je možné vytvářet vlastní repozitáře, např. v rámci firmy. Lze to sice jen z příkazové řádky, ale to
-se hodí jen pro několik málo spravovaných závislosti/pluginů. Pro velké množství položek se v praxi
-se používají nástroje třetích stran jako `Nexus <http://www.sonatype.org/nexus/>`_.
+se hodí jen pro několik málo spravovaných závislostí/pluginů. Pro velké množství položek se v praxi
+používají nástroje třetích stran jako `Nexus <http://www.sonatype.org/nexus/>`_.
 
 Přidání repozitáře do POM
 =========================

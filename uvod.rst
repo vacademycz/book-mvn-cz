@@ -47,19 +47,19 @@ Občas srovnáván, ale jedná se o dva poměrně odlišné nástroje.
 Instalace Maven
 ***************
 
-Instalace Mavenu v Linuxu, Mac OS X i Windows je velmi podobná a spočívá jen v rozbalení archívu a
+Instalace Mavenu v Linuxu, Mac OS X i Windows je velmi podobná a spočívá jen v rozbalení archivu a
 nastavení několika proměnných prostředí (environment variables).
 
-1. `Stáhněte <http://maven.apache.org/download.cgi>`_ si a rozbalte archív Mavenu. Typické umístění
+1. `Stáhneme <http://maven.apache.org/download.cgi>`_ si a rozbalíme archív Mavenu. Typické umístění
    bývá
 
    * v Linuxu ``/usr/local/apache-maven/apache-maven-<verze>``
    * na Windows např. ``C:\Program Files\Apache Software Foundation\apache-maven-<verze>``.
 
-2. Nastavte proměnnou prostředí ``M2_HOME`` na tuto složku.
-3. Nastavte proměnnou prostředí ``M2`` na ``M2_HOME/bin/``.
-4. Volitelně můžete do proměnné prostředí ``MAVEN_OPTS`` zadat parametry pro JVM volanou Maven
-5. Přidejte ``M2`` do ``PATH``.
+2. Nastavíme proměnnou prostředí ``M2_HOME`` na tuto složku.
+3. Nastavíme proměnnou prostředí ``M2`` na ``M2_HOME/bin/``.
+4. Volitelně můžeme do proměnné prostředí ``MAVEN_OPTS`` zadat parametry pro JVM volanou Maven
+5. Přidáme ``M2`` do ``PATH``.
 
 .. important:: Maven rovněž vyžaduje nastavení systémové proměnné ``JAVA_HOME``. Měla by ukazovat na
    složku JDK (JRE nestačí).
@@ -78,7 +78,7 @@ Výpis ``mvn –version`` nám řekne, jestli jsme vše nastavili správně::
 Linux
 =====
 
-V Ubuntu a dalších linuxech tyto kroky znamenají přidat do ``~/.bash_aliases`` (soubor vytvořte,
+V Ubuntu a dalších linuxech tyto kroky znamenají přidat do ``~/.bash_aliases`` (soubor vytvoříme,
 pokud neexistuje) řádky::
 
   export M2_HOME=/usr/local/apache-maven/apache-maven-3.0.4/
@@ -95,8 +95,7 @@ operačního systému ve složce ``/usr/share/maven/``.
 Windows
 =======
 
-Ve Windows použijte ovládací panel :menuselection:`Environment Variables (Proměnné prostředí)` a nastavte
-výše uvedené proměnné prostředí.
+Ve Windows použijeme ovládací panel :menuselection:`Environment Variables (Proměnné prostředí)` a nastavíme výše uvedené proměnné prostředí.
 
 .. figure:: img/windows-environment-variables.png
    
@@ -149,8 +148,8 @@ Podívejme se stručně ty nejdůležitější:
   určený elementy ``<repositories>`` a ``<distributionManagement>`` POM souboru.
 * ``<activeProfiles>`` – jména aktivních profilů (používá-li ``pom.xml`` profily)
 
-Detailní popis najdete v `manuálu Maven <http://maven.apache.org/settings.html>`_.
+Detailní popis najdeme v `manuálu Maven <http://maven.apache.org/settings.html>`_.
 
-.. tip:: Ještě lepší popis významu jednotlivých elementů najdete přímo v souboru
-   ``M2_HOME/conf/settings.xml``. Tento soubor taky můžete použít jako šablonu pro váše uživatelské
-   nastavení a odmazat z něj elementy, které nepotřebujete.
+.. tip:: Ještě lepší popis významu jednotlivých elementů najdeme přímo v souboru
+   ``M2_HOME/conf/settings.xml``. Tento soubor taky můžeme použít jako šablonu pro naše uživatelské
+   nastavení a odmazat z něj elementy, které nepotřebujeme.
